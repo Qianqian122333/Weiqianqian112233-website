@@ -48,7 +48,7 @@ nav {
   justify-content: space-between;
   position: fixed;
   top: 0;
-  width: 85%;
+  width: 100%;
   padding: 2rem 15%;
   background-color: #261e2b;
   backdrop-filter: blur(10px);
