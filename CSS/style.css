@@ -1,0 +1,586 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  font-family: "poppins";
+}
+
+html {
+  font-size: 95%;
+  --background: #25211e;
+  --second-background: #211d1b;
+}
+
+body {
+  /* display: flex; */
+  /* flex-direction: column; */
+  min-height: 100vh;
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-color: var(--background);
+}
+
+.btn {
+  width: 10rem;
+  height: 2.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background-color: white;
+  cursor: pointer;
+  text-align: center;
+  line-height: 2.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background-color: #e05e0d;
+  color: white;
+}
+
+/* nav start  */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 85%;
+  padding: 2rem 15%;
+  background-color: #261e2b;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+/* logo begin */
+nav .logo {
+  font-size: 2rem;
+  color: white;
+  font-weight: 800;
+  transition: all 0.2s ease-in-out;
+}
+
+span {
+  background: linear-gradient(to right, #e05e0d, #d2d98c);
+  background-clip: text;
+  color: transparent;
+}
+
+nav .logo:hover {
+  opacity: 1;
+  transform: translateY(-0.1rem);
+}
+
+/* logo end  */
+/* nav-links start */
+nav .links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+nav .links li a {
+  display: inline-block;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+  opacity: 1;
+  color: #e05e0d;
+  transform: translateY(-0.1rem);
+}
+
+/* nav-links end */
+
+/* menu icon start */
+#menu {
+  color: white;
+  font-size: 3rem;
+  display: none;
+  cursor: pointer;
+}
+
+#menu:hover {
+  color: #e05e0d;
+}
+
+/* menu icon end */
+/* nav end */
+/* section home start */
+section {
+  min-height: 100vh;
+  padding: 5% 15%;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: white;
+}
+
+/* 轮播图开始 */
+#home .container {
+  display: flex;
+  justify-content: space-between;
+  width: 40rem;
+  height: 40rem;
+  padding: 15px;
+}
+
+#home .container .big-pic {
+  width: 30rem;
+  height: 40rem;
+  background-image: url(../images/1Qianqian.jpg);
+  background-size: cover;
+  border-radius: 1rem;
+}
+
+#home .container .small-pics {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 6.6rem;
+  height: 40rem;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+#home .container .small-pics .small-pic {
+  width: 6.6rem;
+  height: 8.8rem;
+}
+
+#home .container .small-pics .small-pic img {
+  width: 6.6rem;
+}
+
+#home .container .small-pic.picked {
+  opacity: 0.5;
+}
+
+#home .container .small-pic img:hover {
+  opacity: 0.5;
+}
+
+/* 轮播图结束 */
+
+#home .info-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 60rem;
+  text-align: center;
+  gap: 0.8rem;
+}
+
+.info-box h1 {
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+.info-box h3 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.info-box p {
+  letter-spacing: 0.1rem;
+}
+
+#home .info-box h3 span {
+  margin-right: 0.5rem;
+}
+
+/* section home end */
+/* section about start  */
+#about {
+  background-color: var(--second-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+#about img {
+  width: 30vw;
+  border-radius: 1rem;
+}
+
+#about .about-box {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 2rem;
+}
+
+#about .about-box h1 {
+  font-size: 5rem;
+}
+
+#about .about-box p {
+  color: white;
+  padding: 20px;
+}
+
+/* Education and Work Experience begin */
+#about .container {
+  display: flex;
+  width: 90vw;
+}
+
+#about .panel {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: orangered;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  transition: flex 0.7s ease-in;
+}
+
+#about .panel h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 24px;
+  margin: 0;
+  opacity: 0;
+}
+
+#about .panel.active {
+  flex: 5;
+}
+
+#about .panel.active h3 {
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+
+@media (max-width: 768px) {
+  #about .container {
+    width: 100vw;
+  }
+
+  #about .panel:nth-of-type(3).panel:nth-of-type(4).panel:nth-of-type(5) {
+    display: none;
+  }
+}
+
+/* Education and Work Experience end */
+
+#about .about-box h2 {
+  font-size: 2.5rem;
+}
+
+/* section about end  */
+
+/* section services start  */
+
+#services {
+  background-color: var(--background);
+}
+
+.header {
+  text-align: center;
+  font-size: 5rem;
+  margin: 0.5rem 0;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+  border: 0.3rem solid rgb(49, 49, 49);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  object-fit: cover;
+  padding: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.box:hover {
+  border: 0.3rem solid rgb(100, 100, 100);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.box h1 {
+  font-size: 2rem;
+}
+
+.box img {
+  min-width: 25px;
+  border-radius: 0.5rem;
+}
+
+/* section services end  */
+/* section contact start */
+#contact {
+  background-color: var(--second-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  bottom: 0;
+  width: 50%;
+  padding: 2rem 10%;
+}
+.contact-button {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-button i {
+  font-size: 1.5rem;
+}
+
+.copy-button {
+  background-color: #ee7c35; /* Customize color */
+  color: black;
+  padding: 0.5rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.copy-button:hover {
+  background-color: #b84e0c;
+  transform: translateY(-0.1rem);
+}
+
+.contact-button2 {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-button2 .icon-link {
+  color: #ee7c35; /* Customize icon color */
+  font-size: 2.5rem; /* Increase icon size */
+  transition: transform 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+
+.contact-button2 .icon-link:hover {
+  color: #b84e0c; /* LinkedIn icon color on hover, you can change it to match the platform */
+  transform: scale(1.2); /* Slightly increase size on hover */
+}
+
+.contact-button2 .icon-link:active {
+  transform: scale(1.1); /* Slightly reduce the hover effect on click */
+}
+
+/* section contact end */
+/* footer start */
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: var(--background);
+  width: 100%;
+  padding: 5rem 15%;
+  color: white;
+}
+
+/* footer end */
+/* respnsive start */
+@media (max-width: 968px) {
+  section {
+    padding: 1rem 15%;
+  }
+
+  nav .btn {
+    display: none;
+  }
+
+  nav #menu {
+    display: block;
+  }
+
+  nav .links {
+    /* display: flex; */
+    /* 第二个会覆盖第一个 */
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    background: #25211e;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1rem 3rem;
+    color: white;
+  }
+
+  nav .links li a {
+    display: block;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  nav .links.active {
+    display: flex;
+    gap: 0.5rem;
+    /* 设置显示为 flex 布局 */
+  }
+
+  #home .info-box h1 {
+    font-size: 4rem;
+  }
+
+  #home .info-box h3 {
+    font-size: 2rem;
+  }
+
+  #home img {
+    width: 24vw;
+  }
+
+  #about {
+    flex-direction: column;
+  }
+
+  #about img {
+    width: 32vw;
+  }
+
+  #about .about-box .about-info h1 {
+    font-size: 3rem;
+  }
+
+  #about .skills ul {
+    font-size: 1rem;
+  }
+
+  /* Education and Work Experience begin */
+
+  #about .container .panel {
+    flex: 0.2;
+  }
+
+  #about .container .panel.active {
+    flex: 3;
+  }
+
+  /* Education and Work Experience end */
+}
+
+@media (max-width: 768px) {
+  #home .info-box h1 {
+    font-size: 2.5rem;
+  }
+
+  #home .info-box h3 {
+    font-size: 1.5rem;
+  }
+
+  #home img {
+    width: 32vw;
+  }
+
+  #about .skills {
+    gap: 3rem;
+  }
+
+  #services .header {
+    font-size: 3rem;
+  }
+
+  #contact .header {
+    font-size: 3rem;
+  }
+
+  #contact .input-box span {
+    font-size: 1.2rem;
+  }
+
+  .input-box input {
+    padding: 0.5rem 1rem;
+  }
+
+  /* 轮播图开始 */
+  #home .container {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  #home .container .big-pic {
+    width: 22.5rem;
+    height: 30rem;
+    background-image: url(../images/1Qianqian.jpg);
+    background-size: cover;
+  }
+
+  #home .container .small-pics {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 4.95rem;
+    height: 30rem;
+    overflow: hidden;
+  }
+
+  #home .container .small-pics .small-pic {
+    width: 4.95rem;
+    height: 6.6rem;
+  }
+
+  #home .container .small-pics .small-pic img {
+    width: 4.95rem;
+  }
+
+  #home .container .small-pic.picked {
+    opacity: 0.5;
+  }
+
+  #home .container .small-pic img:hover {
+    opacity: 0.5;
+  }
+
+  /* 轮播图结束 */
+  /* Education and Work Experience begin */
+  #about .container .panel {
+    flex: 0.1;
+  }
+
+  #about .container .panel.active {
+    flex: 3.5;
+  }
+
+  /* Education and Work Experience end */
+}
+
+/* responsive end  */
